@@ -1,0 +1,214 @@
+{
+  "description": "N0C storage",
+  "configuration": {
+    "global": {},
+    "akeeba": {
+      "tuning": {
+        "min_exec_time": "0",
+        "max_exec_time": "7",
+        "run_time_bias": "75",
+        "nobreak": {
+          "beforelargefile": "0",
+          "afterlargefile": "0",
+          "proactive": "0",
+          "domains": "0",
+          "finalization": "0"
+        },
+        "settimelimit": "0",
+        "setmemlimit": "0"
+      },
+      "advanced": {
+        "autoresume": "1",
+        "autoresume_timeout": "10",
+        "autoresume_maxretries": "3",
+        "dump_engine": "native",
+        "scan_engine": "smart",
+        "archiver_engine": "jpa",
+        "postproc_engine": "amazons3",
+        "embedded_installer": "angie",
+        "uploadkickstart": "0",
+        "virtual_folder": "external_files"
+      },
+      "quota": {
+        "remote": "0",
+        "maxage": {
+          "enable": "0",
+          "maxdays": "31",
+          "keepday": "1"
+        },
+        "obsolete_quota": "50",
+        "enable_size_quota": "0",
+        "size_quota": "15728640",
+        "enable_count_quota": "1",
+        "count_quota": "3",
+        "remote_latest": "1"
+      },
+      "basic": {
+        "output_directory": "[DEFAULT_OUTPUT]",
+        "log_level": "4",
+        "archive_name": "site-[HOST]-[DATE]-[TIME_TZ]-[RANDOM]",
+        "backup_type": "full",
+        "clientsidewait": "0"
+      },
+      "flag": {
+        "confwiz": 1
+      },
+      "platform": {
+        "override_root": "0",
+        "newroot": "",
+        "override_db": "0",
+        "dbdriver": "mysqli",
+        "dbhost": "",
+        "dbport": "",
+        "dbusername": "",
+        "dbpassword": "",
+        "dbname": "",
+        "dbprefix": "",
+        "dbencryption": "0",
+        "dbsslcipher": "",
+        "dbsslca": "",
+        "dbsslkey": "",
+        "dbsslcert": "",
+        "dbsslverifyservercert": "0"
+      }
+    },
+    "engine": {
+      "installer": {
+        "angie": {
+          "key": ""
+        }
+      },
+      "archiver": {
+        "jps": {
+          "key": "",
+          "pbkdf2usestaticsalt": "1"
+        },
+        "common": {
+          "dereference_symlinks": "0",
+          "part_size": "2147352576",
+          "permissions": "0666",
+          "chunk_size": "1048576",
+          "big_file_threshold": "1048576"
+        },
+        "directsftp": {
+          "host": "",
+          "port": "22",
+          "user": "",
+          "pass": "",
+          "privkey": "",
+          "pubkey": "",
+          "initial_directory": "",
+          "sftp_test": "0"
+        },
+        "directsftpcurl": {
+          "host": "",
+          "port": "22",
+          "user": "",
+          "pass": "",
+          "privkey": "",
+          "pubkey": "",
+          "initial_directory": "",
+          "sftp_test": "0"
+        },
+        "zip": {
+          "cd_glue_chunk_size": "1048576"
+        },
+        "directftpcurl": {
+          "host": "",
+          "port": "21",
+          "user": "",
+          "pass": "",
+          "initial_directory": "",
+          "ftps": "0",
+          "passive_mode": "1",
+          "passive_mode_workaround": "1",
+          "ftp_test": "0"
+        },
+        "directftp": {
+          "host": "",
+          "port": "21",
+          "user": "",
+          "pass": "",
+          "initial_directory": "",
+          "ftps": "0",
+          "passive_mode": "1",
+          "ftp_test": "0"
+        }
+      },
+      "dump": {
+        "divider": {
+          "common": "0",
+          "mysql": "0"
+        },
+        "common": {
+          "blankoutpass": "0",
+          "extended_inserts": "1",
+          "packet_size": "209715.2",
+          "splitsize": "524288",
+          "batchsize": "1000"
+        },
+        "native": {
+          "advanced_entitites": "0",
+          "nodependencies": "0",
+          "nobtree": "1"
+        }
+      },
+      "scan": {
+        "large": {
+          "dir_threshold": "100",
+          "file_threshold": "50"
+        },
+        "common": {
+          "largefile": "10485760"
+        },
+        "smart": {
+          "large_dir_threshold": "100"
+        }
+      },
+      "postproc": {
+        "common": {
+          "after_part": "0",
+          "abort_on_fail": "0",
+          "delete_after": "1"
+        },
+        "amazons3": {
+          "accesskey": "6DDGKI3KKH14NYTO3AHE",
+          "secretkey": "ouqVGFtXpDO1YMJF3f7bAaOzCBnue5jpCMvWFVus",
+          "usessl": "1",
+          "dualstack": "1",
+          "bucket": "fgqznqxp",
+          "signature": "v2",
+          "region": "",
+          "custom_region": "ht2-storage",
+          "pathaccess": "1",
+          "directory": "private/",
+          "legacy": "1",
+          "rrs": "0",
+          "customendpoint": "ht2-storage.n0c.com:5443"
+        }
+      }
+    },
+    "core": {
+      "filters": {
+        "hoststats": {
+          "enabled": "1"
+        },
+        "dateconditional": {
+          "enabled": "0",
+          "start": "1970-01-01 00:00 GMT"
+        },
+        "errorlogs": {
+          "enabled": "1"
+        },
+        "finder": {
+          "enabled": "1"
+        },
+        "actionlogs": {
+          "enabled": "1"
+        }
+      }
+    }
+  },
+  "filters": null,
+  "quickicon": "1"
+}
